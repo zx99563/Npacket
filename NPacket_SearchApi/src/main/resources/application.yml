@@ -1,0 +1,12 @@
+server:
+  port: 8096
+spring:
+  application:
+    name: SearchApi
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+

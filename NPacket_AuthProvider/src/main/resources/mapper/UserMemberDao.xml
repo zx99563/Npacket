@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feri.netpacket.provider.dao.UserMemberDao">
+
+    <insert id="insert"
+            parameterType="com.feri.netpacket.entity.user.UserMember">
+        INSERT INTO user_member(id,phone,flag,password,ctime)
+        values(#{id}, #{phone}, 1, #{password},now())
+    </insert>
+    <select id="selectByPhone" resultType="com.feri.netpacket.entity.user.UserMember">
+        select * from user_member where phone=#{phone}
+    </select>
+</mapper>

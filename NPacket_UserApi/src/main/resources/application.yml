@@ -1,0 +1,11 @@
+server:
+  port: 8094
+spring:
+  application:
+    name: UserApi
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feri.netpacket.provider.dao.UserMemberRegisterDao">
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id"
+            parameterType="com.feri.netpacket.entity.user.UserMemberRegister">
+        INSERT INTO user_member_register_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != mid'>
+                mid,
+            </if>
+            <if test ='null != ctime'>
+                ctime,
+            </if>
+            <if test ='null != ip'>
+                ip,
+            </if>
+            <if test ='null != province'>
+                province,
+            </if>
+            <if test ='null != city'>
+                city,
+            </if>
+            <if test ='null != loginType'>
+                login_type,
+            </if>
+            <if test ='null != detail'>
+                detail
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != mid'>
+                #{mid},
+            </if>
+            <if test ='null != ctime'>
+                #{ctime},
+            </if>
+            <if test ='null != ip'>
+                #{ip},
+            </if>
+            <if test ='null != province'>
+                #{province},
+            </if>
+            <if test ='null != city'>
+                #{city},
+            </if>
+            <if test ='null != loginType'>
+                #{loginType},
+            </if>
+            <if test ='null != detail'>
+                #{detail}
+            </if>
+        </trim>
+    </insert>
+</mapper>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--	SpringBoot-->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.feri.netpacket</groupId>
+	<artifactId>npacket_parent</artifactId>
+	<version>0.0.1</version>
+	<name>Npacket_Parent</name>
+	<description>Demo project for Spring Boot</description>
+	<packaging>pom</packaging>
+<!--	内部的子项目-->
+	<modules>
+<!--		微服务的注册中心-->
+		<module>Npacket_EurekaServer</module>
+<!--		微服务的实体项目-->
+		<module>Npacket_Entity</module>
+<!--		微服务的公共模块-->
+		<module>NPacket_Common</module>
+<!--		微服务的鉴权服务提供者-->
+		<module>NPacket_AuthProvider</module>
+<!--		微服务的鉴权服务消费者-->
+		<module>NPacket_AuthApi</module>
+
+        <module>Npacket_OutNetProvider</module>
+        <module>NPacket_OutNetApi</module>
+        <module>NPacket_Zuul</module>
+		<module>NPacket_UserProvider</module>
+		<module>NPacket_UserApi</module>
+		<module>NPacket_SearchProvider</module>
+		<module>NPacket_SearchApi</module>
+        <module>NPacket_SkillProvider</module>
+		<module>NPacket_SkillApi</module>
+		<module>NPacket_WebSocket</module>
+        <module>NPacket_PayApi</module>
+    </modules>
+<!--	版本号声明-->
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+		<mysql.version>8.0.15</mysql.version>
+		<druid.version>1.1.10</druid.version>
+		<mybatisboot.version>1.3.2</mybatisboot.version>
+		<alisms.version>4.5.1</alisms.version>
+		<jedis.version>3.3.0</jedis.version>
+		<jwt.version>3.10.3</jwt.version>
+		<jjwt.version>0.9.0</jjwt.version>
+		<swagger.version>2.9.2</swagger.version>
+		<swaggerui.version>1.9.6</swaggerui.version>
+		<mybatisplusboot.version>3.3.2</mybatisplusboot.version>
+	</properties>
+
+<!--	版本限定-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatisboot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aliyun</groupId>
+				<artifactId>aliyun-java-sdk-core</artifactId>
+				<version>${alisms.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.auth0</groupId>
+				<artifactId>java-jwt</artifactId>
+				<version>${jwt.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${swagger.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.xiaoymin</groupId>
+				<artifactId>swagger-bootstrap-ui</artifactId>
+				<version>${swaggerui.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatisplusboot.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>
